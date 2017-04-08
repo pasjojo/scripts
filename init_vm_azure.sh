@@ -29,6 +29,12 @@ echo "gluster-fs-client et python"
 echo "-----------------------"
 apt-get install glusterfs-client python -y
 
+
+echo "NTP"
+apt-get install ntpdate
+ntpdate-debian
+echo "11 */6  * * *   root    /usr/sbin/ntpdate-debian" >> /etc/crontab 
+
 echo "Clean up"
 echo "-----------------------"
 apt-get autoremove -y
